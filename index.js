@@ -25,20 +25,6 @@ app.get('/start',function(req,res){
         });
 })
 
-app.get('/stop',function(req,res){
-    exec('echo "helloWorld"',
-    (error, stdout, stderr) => {
-        if(!error){
-            console.log(`${stdout}`);
-            res.status(200).send("Successfully stoped the App");
-        }else{
-            console.log("error while stoping app : ",`${stderr}`);
-            res.status(500).send("Error Occured while stoping the app");
-        }          
-        
-    });
-})
-
 app.get('/restart',function(req,res){
     exec('echo "helloWorld"',
     (error, stdout, stderr) => {
@@ -48,19 +34,6 @@ app.get('/restart',function(req,res){
         }else{
             console.log("error while restarting app : ",`${stderr}`);
             res.status(500).send("Error Occured while restarting the app");
-        }          
-    });
-})
-
-app.get('/pause',function(req,res){
-    exec('echo "helloWorld"',
-    (error, stdout, stderr) => {
-        if(!error){
-            console.log(`${stdout}`);
-            res.status(200).send("Successfully paused the App");
-        }else{
-            console.log("error while pausing app : ",`${stderr}`);
-            res.status(500).send("Error Occured while pausing the app");
         }          
     });
 })

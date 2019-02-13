@@ -147,19 +147,13 @@
         $('#startButton').click(function () {
             nodeServices("start");
         })
-        $('#stopButton').click(function () {
-            nodeServices("stop");
-        })
         $('#reStartButton').click(function () {
             nodeServices("restart");
-        })
-        $('#pauseButton').click(function () {
-            nodeServices("pause");
         })
         
         function nodeServices(operation){
             $.ajax({
-                url: 'http://localhost:8080/' + operation,
+                url: '/' + operation,
                 type: 'GET',
                 success: function (data) {
                     console.log('Successfully: '+ operation + "ed app");
